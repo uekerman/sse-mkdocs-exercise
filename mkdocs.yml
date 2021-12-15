@@ -1,0 +1,10 @@
+site_name: SSE Documentation Example
+
+nav:
+    - Home: 'index.md'
+    - 'User Guide':
+        - 'Installation': 'compilation-and-installation.md'
+        - 'Getting Started': 'how-to.md'
+        
+repo_url: https://github.com/uekerman/sse-mkdocs-exercise
+edit_uri: 'edit/main/docs/'
