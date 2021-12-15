@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="uekerman">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Getting Started - SSE Documentation Example</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">SSE Documentation Example</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../compilation-and-installation/" class="dropdown-item">Installation</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Getting Started</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../compilation-and-installation/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/uekerman/sse-mkdocs-exercise/edit/main/docs/how-to.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#how-to-use-the-program" class="nav-link">How to use the Program</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#using-the-program" class="nav-link">Using the Program</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="how-to-use-the-program">How to use the Program</h1>
+<p>This chapter assumes that the code has been compiled and potentially installed already. Instructions on how to install and compile the code can be found in the <a href="../compilation-and-installation/">Compilation and Installation section</a>.</p>
+<h2 id="using-the-program">Using the Program</h2>
+<p>We assume that you are in an directory from which you can run the program. For this section we assume that we are in the <code>build/</code> directory as explained in the <a href="../compilation-and-installation/">Compilation and Installation section</a>. If you have installed the software in a system path, you can follow the same steps, but the output printed and the paths used may differ.</p>
+<p>The program can be run by</p>
+<pre><code class="language-bash">./documentationexample [YAMLFILE]
+</code></pre>
+<p>where <code>YAMLFILE</code> refers to the path of a YAML file, e.g., the file <code>config.yml</code> inside the <code>src/yamlParser/</code> directory. Specification of a <code>YAMLFILE</code> is <em>optional</em>.</p>
+<p>The program will do the following steps</p>
+<p>The program greets you with a message</p>
+<pre><code class="language-bash">Let's fight with CMake, Docker, and some dependencies!
+</code></pre>
+<p>The program modifies a flat set using Boost container and print the result</p>
+<pre><code class="language-bash">Modify a flat set using boost container
+Elements in s1: 1       2       3       4
+</code></pre>
+<p>The program inspects the contens of the current directory and prints the contents of the directory to the screen.</p>
+<pre><code class="language-bash">Inspect the current directory using boost filesystem
+&quot;.&quot; is a directory containing:
+    &quot;CMakeCache.txt&quot;
+    &quot;CMakeFiles&quot;
+    &quot;Makefile&quot;
+    &quot;cmake_install.cmake&quot;
+    &quot;documentationexample&quot;
+    &quot;libdocumentationexamplelib.a&quot;
+</code></pre>
+<p>The program checks whether a <code>YAMLFILE</code> has been supplied on the command line.</p>
+<p>If no <code>YAMLFILE</code> has been passed to the program.</p>
+<p>If a <code>YAMLFILE</code> is specified, e.g., via</p>
+<pre><code class="language-bash">  ./documentationexample ../src/yamlParser/config.yml
+</code></pre>
+<p>the <code>YAMLFILE</code> will be parsed and the program tries to print the <code>version</code> property of the `YAMLFILE.</p>
+<pre><code class="language-bash">Parse some yaml file with yaml-cpp
+  ../src/yamlParser/config.yml
+Version: 1.2.3
+</code></pre>
+<p>If there is no <code>version</code> property, the program will crash</p>
+<pre><code class="language-bash">terminate called after throwing an instance of 'YAML::TypedBadConversion&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;'
+  what():  bad conversion
+Aborted (core dumped
+</code></pre>
+<p>Finally, the program terminates.</p>
+<h3 id="full-output-without-yamlfile">Full Output Without YAMLFILE</h3>
+<pre><code class="language-bash">$ ./documentationexample
+Let's fight with CMake, Docker, and some dependencies!
+
+Modify a flat set using boost container
+Elements in s1: 1       2       3       4
+
+Inspect the current directory using boost filesystem
+&quot;.&quot; is a directory containing:
+    &quot;CMakeCache.txt&quot;
+    &quot;CMakeFiles&quot;
+    &quot;Makefile&quot;
+    &quot;cmake_install.cmake&quot;
+    &quot;documentationexample&quot;
+    &quot;libdocumentationexamplelib.a&quot;
+</code></pre>
+<h3 id="full-output-with-yamlfile">Full Output With YAMLFILE</h3>
+<pre><code class="language-bash">$ ./documentationexample ../src/yamlParser/config.yml
+Let's fight with CMake, Docker, and some dependencies!
+
+Modify a flat set using boost container
+Elements in s1: 1       2       3       4
+
+Inspect the current directory using boost filesystem
+&quot;.&quot; is a directory containing:
+    &quot;CMakeCache.txt&quot;
+    &quot;CMakeFiles&quot;
+    &quot;Makefile&quot;
+    &quot;cmake_install.cmake&quot;
+    &quot;documentationexample&quot;
+    &quot;libdocumentationexamplelib.a&quot;
+
+Parse some yaml file with yaml-cpp
+  ../src/yamlParser/config.yml
+Version: 1.2.3
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
